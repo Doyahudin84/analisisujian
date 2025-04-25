@@ -366,7 +366,7 @@ def main():
                 st.dataframe(
                     student_results.style.apply(
                         lambda x: ['background-color: #E8F5E9' if status == 'Lulus' else 'background-color: #FFEBEE' for status in x['Status']], 
-                        axis=1
+                        axis=0
                     ),
                     use_container_width=True
                 )
