@@ -125,6 +125,13 @@ def get_difficulty_level(correct_rate):
         return "Mudah"
     else:
         return "Sangat Mudah"
+        
+# Fungsi mengambil status
+def highlight_status(row):
+    if row['Status'] == 'Lulus':
+        return ['background-color: #E8F5E9'] * len(row)
+    else:
+        return ['background-color: #FFEBEE'] * len(row)
 
 # Fungsi untuk membuat rekomendasi topik
 def generate_topic_recommendations(difficulty_data, topic_mapping=None):
@@ -364,10 +371,7 @@ def main():
                 student_results = student_results.sort_values(by='Nilai', ascending=False)
                 
                 st.dataframe(
-                    student_results.style.apply(
-                        lambda x: ['background-color: #E8F5E9' if status == 'Lulus' else 'background-color: #FFEBEE' for status in x['Status']], 
-                        axis=0
-                    ),
+                    student_results.style.apply(highlight_status, axis=1),
                     use_container_width=True
                 )
                 
