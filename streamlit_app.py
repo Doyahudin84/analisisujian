@@ -158,6 +158,7 @@ def generate_topic_recommendations(difficulty_data, topic_mapping=None):
 def main():
     st.markdown('<div class="main-header">📊 Analisis Hasil Ujian</div>', unsafe_allow_html=True)
     st.markdown("""
+   By Doyahudin
     Aplikasi ini membantu guru menganalisis hasil ujian siswa untuk:
     - Mengidentifikasi soal-soal tersulit
     - Melihat rata-rata nilai kelas
